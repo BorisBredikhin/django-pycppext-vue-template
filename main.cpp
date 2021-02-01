@@ -1,5 +1,8 @@
 #include <iostream>
+#include <string>
 #include <boost/program_options.hpp>
+
+#include "config.h"
 
 namespace po = boost::program_options;
 
@@ -24,6 +27,11 @@ int main(int argc, char *argv[]) {
 
     if (variablesMap.empty() || variablesMap.contains("help"))
         std::cout << description << std::endl;
+    if (variablesMap.contains("config")) {
+        auto pathToConfig = variablesMap["config"].as<std::string>();
+        auto config = checkers::config::read_config(pathToConfig);
+        std::cout << "D";
+    }
     return 0;
 }
 
