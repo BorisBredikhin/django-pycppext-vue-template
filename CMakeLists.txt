@@ -9,13 +9,13 @@ include_directories(${PYTHON_INCLUDE_DIRS})
 find_package(Boost COMPONENTS python REQUIRED)
 include_directories(${Boost_INCLUDE_DIR})
 
-add_library(pyex SHARED PyEx.cpp)
-target_link_libraries(pyex ${PYTHON_LIBRARIES})
+add_library(cppcheckers SHARED cppcheckers.cpp)
+target_link_libraries(cppcheckers ${PYTHON_LIBRARIES})
 set_target_properties(
-        pyex
+        cppcheckers
         PROPERTIES
             PREFIX ""
-            OUTPUT_NAME pyex
+            OUTPUT_NAME cppcheckers
             LINKER_LANGUAGE CXX
 )
 

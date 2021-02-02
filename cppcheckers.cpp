@@ -21,15 +21,15 @@ static PyMethodDef EmbMethods[] = {
         {NULL, NULL, 0, NULL}
 };
 
-static struct PyModuleDef pyex = {
+static struct PyModuleDef cppcheckers = {
         PyModuleDef_HEAD_INIT,
-        "pyex",
+        "cppcheckers",
         "",
         -1,
         EmbMethods
 };
 
 
-PyMODINIT_FUNC PyInit_pyex() {
-    return PyModule_Create(&pyex);
+PyMODINIT_FUNC PyInit_cppcheckers() {
+    return PyModule_Create(&cppcheckers);
 }

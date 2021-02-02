@@ -1,4 +1,4 @@
 addr:
   host: 127.0.0.1
   port: 8083
-db: "/home/boris/CLionProjects/checkers/data.sqlite3"
+db: "data.sqlite3"
