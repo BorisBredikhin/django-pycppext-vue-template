@@ -6,7 +6,8 @@ export const LOGOUT = 'logout'
 export default createStore({
   state: {
     loggedIn: false,
-    token: null as (string | null)
+    token: null as (string | null),
+    apiRoot: 'http://127.0.0.1:8083/'
   },
   mutations: {
     [LOGIN] (state, payload: string) {
