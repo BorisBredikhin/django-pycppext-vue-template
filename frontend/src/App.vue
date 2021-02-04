@@ -1,11 +1,15 @@
 <template>
-  <div v-if="!loggedIn">
+  <div v-if="!loggedIn()">
   <div id="nav">
     <router-link to="/">Главная</router-link> |
-    <router-link to="/register">Регистрация</router-link>
+    <router-link to="/register">Регистрация</router-link> |
+    <router-link to="/login">Вход</router-link>
+  </div>
+  </div>
+  <div v-else>
+    <router-link to="/profile">{{loggedIn()}}</router-link>
   </div>
   <router-view/>
-</div>
 </template>
 
 <!--suppress CssUnusedSymbol -->
@@ -34,12 +38,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { getCookie } from '@/utils'
 
 export default defineComponent({
   name: 'App',
-  computed: {
+  methods: {
     loggedIn () {
-      return false
+      return getCookie('token')
     }
   }
 })

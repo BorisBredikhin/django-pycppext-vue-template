@@ -15,8 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.schemas import get_schema_view
 
 urlpatterns = [
 path('', include('checkers_app.urls')),
     path('admin/', admin.site.urls),
+    path(r'rest-auth/', include('rest_auth.urls')),
+    path(r'rest-auth/registration/', include('rest_auth.registration.urls')),
+path('openapi', get_schema_view(
+        title="Student Planner",
+        description="API for all things …",
+        version="1.0.0"
+    ), name='openapi-schema'),
 ]
