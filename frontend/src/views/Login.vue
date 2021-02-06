@@ -15,13 +15,16 @@ import { login as l } from '@/apiAdapters'
 import { getById } from '@/utils'
 
 export default {
-  name: 'Register',
+  name: 'Login',
   methods: {
     login () {
       l(
         getById<HTMLInputElement>('login').value,
         getById<HTMLInputElement>('password').value
-      )
+      ).then((token: string) => {
+        document.cookie = `token=${token}`
+        document.location.href = '/'
+      })
     }
   }
 }

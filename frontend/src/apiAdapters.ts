@@ -13,7 +13,6 @@ export async function login (username: string, password: string) {
   const json = await r.json()
 
   document.cookie = `token=${json.key}`
-  document.location.href = document.location.host
 
   return (token = json.key)
 }
