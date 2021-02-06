@@ -2,3 +2,4 @@ addr:
   host: 127.0.0.1
   port: 8000
 db: "data.sqlite3"
+secret_key: 'wj$iuzx1am=n+&e+b_6&r0vii!32kyk%$^hv0a=4-(m)%#7cyn'

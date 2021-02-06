@@ -12,6 +12,7 @@ class Addr:
 class AppConfig:
     db: str
     addr: Addr
+    secret_key: str
     def __init__(self, d):
         self.__dict__ = d
         self.addr = Addr(self.addr)
